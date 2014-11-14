@@ -1,3 +1,7 @@
-#portal-breadcrumbs {
+#portal-breadcrumbs,
+#viewlet-above-content-body,
+#viewlet-below-content
+{
     display: none;
 }
+

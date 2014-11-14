@@ -37,17 +37,17 @@ class CommandView(BrowserView):
         # Get datas
         rg = self.request.get
 
-        values['lastname'] = rg('lastname')
-        values['firstname'] = rg('firstname')
-        values['phone'] = rg('phone')
-        values['hour'] = rg('hour')
-        values['minute'] = rg('minute')
-        values['panier_1'] = rg('panier_1')
-        values['panier_2'] = rg('panier_2')
-        values['panier_3'] = rg('panier_3')
-        values['croissant'] = rg('croissant')
-        values['pain_chocolat'] = rg('pain_chocolat')
-        values['message'] = rg('message')
+        values['lastname'] = rg('lastname', '').decode('utf-8')
+        values['firstname'] = rg('firstname', '').decode('utf-8')
+        values['phone'] = rg('phone', '').decode('utf-8')
+        values['hour'] = rg('hour', '')
+        values['minute'] = rg('minute', '')
+        values['panier_1'] = rg('panier_1', '')
+        values['panier_2'] = rg('panier_2', '')
+        values['panier_3'] = rg('panier_3', '')
+        values['croissant'] = rg('croissant', '')
+        values['pain_chocolat'] = rg('pain_chocolat', '')
+        values['message'] = rg('message', '').decode('utf-8')
         return values
 
     def treat_command(self):
