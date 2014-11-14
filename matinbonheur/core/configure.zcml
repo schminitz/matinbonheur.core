@@ -1,14 +1,17 @@
 <configure xmlns="http://namespaces.zope.org/zope"
            xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
            xmlns:plone="http://namespaces.plone.org/plone"
-           xmlns:cmf="http://namespaces.zope.org/cmf">>
+           xmlns:cmf="http://namespaces.zope.org/cmf"
+           i18n_domain="matinbonheur">
+
+    <include package=".browser" />
 
     <!-- Profile -->
     <genericsetup:registerProfile
         name="default"
-        title="matinbonheur.theme"
+        title="Matin bonheur core"
         directory="profiles/default"
-        description="Installs matinbonheur theme"
+        description="Installs matinbonheur"
         for="Products.CMFPlone.interfaces.IPloneSiteRoot"
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />

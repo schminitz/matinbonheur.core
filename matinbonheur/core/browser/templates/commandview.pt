@@ -1,0 +1,132 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="matinbonheur">
+  <body>
+    <div metal:fill-slot="main">
+      <span tal:define="values view/values;
+                        status view/treat_command">
+
+        <span>
+          <span tal:content="structure status/message" />
+        </span>
+
+        <form method="POST"
+              tal:condition="status/not_sent">
+        Votre nom:
+        <br />
+        <input type="text"
+               name="lastname"
+               tal:attributes="value view/values/lastname" />
+        <br />Votre prénom:
+        <br />
+        <input type="text"
+               name="firstname"
+               tal:attributes="value view/values/firstname" />
+        <br />Votre numéro de téléphone:
+        <br />
+        <input type="text"
+               name="phone"
+               tal:attributes="value view/values/phone" />
+        <br />Heure de livraison souhaitée:
+        <br />
+        <select name="hour">
+          <option value="7" tal:attributes="selected python:values['hour']=='7' and 'selected'">7</option>
+          <option value="8" tal:attributes="selected python:values['hour']=='8' and 'selected'">8</option>
+          <option value="9" tal:attributes="selected python:values['hour']=='9' and 'selected'">9</option>
+          <option value="10" tal:attributes="selected python:values['hour']=='10' and 'selected'">10</option>
+        </select>: 
+        <select name="minute">
+          <option value="0" tal:attributes="selected python:values['minute']=='0' and 'selected'">0</option>
+          <option value="15" tal:attributes="selected python:values['minute']=='15' and 'selected'">15</option>
+          <option value="30" tal:attributes="selected python:values['minute']=='30' and 'selected'">30</option>
+          <option value="45" tal:attributes="selected python:values['minute']=='45' and 'selected'">45</option>
+        </select>
+        <br />Formules souhaitées:
+        <br />
+        <ul>
+          <li>Paniers 1: 
+          <select name="panier_1">
+            <option value="0" tal:attributes="selected python:values['panier_1']=='0' and 'selected'">0</option>
+            <option value="1" tal:attributes="selected python:values['panier_1']=='1' and 'selected'">1</option>
+            <option value="2" tal:attributes="selected python:values['panier_1']=='2' and 'selected'">2</option>
+            <option value="3" tal:attributes="selected python:values['panier_1']=='3' and 'selected'">3</option>
+            <option value="4" tal:attributes="selected python:values['panier_1']=='4' and 'selected'">4</option>
+            <option value="5" tal:attributes="selected python:values['panier_1']=='5' and 'selected'">5</option>
+            <option value="6" tal:attributes="selected python:values['panier_1']=='6' and 'selected'">6</option>
+            <option value="7" tal:attributes="selected python:values['panier_1']=='7' and 'selected'">7</option>
+            <option value="8" tal:attributes="selected python:values['panier_1']=='8' and 'selected'">8</option>
+            <option value="9" tal:attributes="selected python:values['panier_1']=='9' and 'selected'">9</option>
+          </select></li>
+          <li>Paniers 2: 
+          <select name="panier_2">
+            <option value="0" tal:attributes="selected python:values['panier_2']=='0' and 'selected'">0</option>
+            <option value="1" tal:attributes="selected python:values['panier_2']=='1' and 'selected'">1</option>
+            <option value="2" tal:attributes="selected python:values['panier_2']=='2' and 'selected'">2</option>
+            <option value="3" tal:attributes="selected python:values['panier_2']=='3' and 'selected'">3</option>
+            <option value="4" tal:attributes="selected python:values['panier_2']=='4' and 'selected'">4</option>
+            <option value="5" tal:attributes="selected python:values['panier_2']=='5' and 'selected'">5</option>
+            <option value="6" tal:attributes="selected python:values['panier_2']=='6' and 'selected'">6</option>
+            <option value="7" tal:attributes="selected python:values['panier_2']=='7' and 'selected'">7</option>
+            <option value="8" tal:attributes="selected python:values['panier_2']=='8' and 'selected'">8</option>
+            <option value="9" tal:attributes="selected python:values['panier_2']=='9' and 'selected'">9</option>
+          </select></li>
+          <li>Paniers 3: 
+          <select name="panier_3">
+            <option value="0" tal:attributes="selected python:values['panier_3']=='0' and 'selected'">0</option>
+            <option value="1" tal:attributes="selected python:values['panier_3']=='1' and 'selected'">1</option>
+            <option value="2" tal:attributes="selected python:values['panier_3']=='2' and 'selected'">2</option>
+            <option value="3" tal:attributes="selected python:values['panier_3']=='3' and 'selected'">3</option>
+            <option value="4" tal:attributes="selected python:values['panier_3']=='4' and 'selected'">4</option>
+            <option value="5" tal:attributes="selected python:values['panier_3']=='5' and 'selected'">5</option>
+            <option value="6" tal:attributes="selected python:values['panier_3']=='6' and 'selected'">6</option>
+            <option value="7" tal:attributes="selected python:values['panier_3']=='7' and 'selected'">7</option>
+            <option value="8" tal:attributes="selected python:values['panier_3']=='8' and 'selected'">8</option>
+            <option value="9" tal:attributes="selected python:values['panier_3']=='9' and 'selected'">9</option>
+          </select></li>
+        </ul>Supplément:
+        <br />
+        <ul>
+          <li>Croissants: 
+          <select name="croissant">
+            <option value="0" tal:attributes="selected python:values['croissant']=='0' and 'selected'">0</option>
+            <option value="1" tal:attributes="selected python:values['croissant']=='1' and 'selected'">1</option>
+            <option value="2" tal:attributes="selected python:values['croissant']=='2' and 'selected'">2</option>
+            <option value="3" tal:attributes="selected python:values['croissant']=='3' and 'selected'">3</option>
+            <option value="4" tal:attributes="selected python:values['croissant']=='4' and 'selected'">4</option>
+            <option value="5" tal:attributes="selected python:values['croissant']=='5' and 'selected'">5</option>
+            <option value="6" tal:attributes="selected python:values['croissant']=='6' and 'selected'">6</option>
+            <option value="7" tal:attributes="selected python:values['croissant']=='7' and 'selected'">7</option>
+            <option value="8" tal:attributes="selected python:values['croissant']=='8' and 'selected'">8</option>
+            <option value="9" tal:attributes="selected python:values['croissant']=='9' and 'selected'">9</option>
+          </select></li>
+          <li>Pains au chocolat: 
+          <select name="pain_chocolat">
+            <option value="0" tal:attributes="selected python:values['pain_chocolat']=='0' and 'selected'">0</option>
+            <option value="1" tal:attributes="selected python:values['pain_chocolat']=='1' and 'selected'">1</option>
+            <option value="2" tal:attributes="selected python:values['pain_chocolat']=='2' and 'selected'">2</option>
+            <option value="3" tal:attributes="selected python:values['pain_chocolat']=='3' and 'selected'">3</option>
+            <option value="4" tal:attributes="selected python:values['pain_chocolat']=='4' and 'selected'">4</option>
+            <option value="5" tal:attributes="selected python:values['pain_chocolat']=='5' and 'selected'">5</option>
+            <option value="6" tal:attributes="selected python:values['pain_chocolat']=='6' and 'selected'">6</option>
+            <option value="7" tal:attributes="selected python:values['pain_chocolat']=='7' and 'selected'">7</option>
+            <option value="8" tal:attributes="selected python:values['pain_chocolat']=='8' and 'selected'">8</option>
+            <option value="9" tal:attributes="selected python:values['pain_chocolat']=='9' and 'selected'">9</option>
+          </select></li>
+        </ul>Votre message:
+        <br />
+
+        <textarea name="message"
+                  tal:content="view/values/message" ></textarea>
+
+        <input type="hidden"
+               name="form_sent"
+               value="1" />
+
+        <input type="submit"
+               value="Envoyer" />
+        </form>
+      </span>
+      <!-- define -->
+    </div>
+  </body>
+</html>

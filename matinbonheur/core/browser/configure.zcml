@@ -1,0 +1,13 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           i18n_domain="matinbonheur">
+
+  <browser:page
+      for="Products.CMFCore.interfaces.IFolderish"
+      name="commandview"
+      class=".commandview.CommandView"
+      permission="zope.Public"
+      template="templates/commandview.pt"
+      />
+
+</configure>
