@@ -30,6 +30,7 @@ setup(name='matinbonheur.core',
           'setuptools',
           'plone.api',
           'Plone',
+          'plone.app.themingplugins',
       ],
       extras_require={
       },

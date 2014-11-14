@@ -1,0 +1,21 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+           xmlns:plone="http://namespaces.plone.org/plone"
+           xmlns:cmf="http://namespaces.zope.org/cmf">>
+
+    <!-- Profile -->
+    <genericsetup:registerProfile
+        name="default"
+        title="matinbonheur.theme"
+        directory="profiles/default"
+        description="Installs matinbonheur theme"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+    <!-- Theme -->
+    <plone:static directory="static" name="matinbonheur.theme" type="theme" />
+
+    <cmf:registerDirectory name="matinbonheur_skin_images"/>
+
+</configure>

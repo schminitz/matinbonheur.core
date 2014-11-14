@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<object name="portal_skins"
+        allow_any="False"
+        cookie_persistence="False"
+        default_skin="Matin bonheur core package">
+
+    <object name="matinbonheur_skin_images"
+            meta_type="Filesystem Directory View"
+            directory="matinbonheur.core:skins/matinbonheur_skin_images"/>
+
+    <skin-path name="Matin bonheur core package"
+               based-on="Sunburst Theme">
+        <layer name="matinbonheur_skin_images"
+               insert-after="custom"/>
+
+    </skin-path>
+
+</object>
