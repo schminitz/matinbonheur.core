@@ -55,6 +55,12 @@
     <replace css:content-children="#portal-footer"
              css:theme-children="#footer" />
 
+    <replace css:content-children="#portal-globalnav"
+             css:theme-children="#portal-globalnav" />
+
+    <replace css:content-children="#portal-columns"
+             css:theme-children="#portal-columns" />
+
     <drop css:theme="#left-column" />
     <drop css:theme="#main-column" />
     <drop css:theme="#main-column-large" />
